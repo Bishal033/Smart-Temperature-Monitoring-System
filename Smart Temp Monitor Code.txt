@@ -1,0 +1,39 @@
+#include <LiquidCrystal.h> // Include LCD library
+
+int sensor = A0;   // TMP36 sensor connected to Analog Pin A0
+int buzzer = 6;    // Buzzer connected to Digital Pin 6
+float tempC;       // Variable to store temperature
+
+// Define LCD pins: (RS, E, D4, D5, D6, D7)
+LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
+
+void setup() {
+    pinMode(buzzer, OUTPUT); // Set buzzer pin as output
+    Serial.begin(9600);      // Start serial communication
+
+    lcd.begin(16, 2);        // Initialize LCD (16 columns, 2 rows)
+    lcd.print("Temp:");      // Display initial text
+}
+
+void loop() {
+    int reading = analogRead(sensor); // Read TMP36 sensor voltage
+    tempC = (reading * 5.0 / 1024 - 0.5) * 100; // Convert voltage to temperature
+
+    Serial.print("Temperature: "); // Print to Serial Monitor
+    Serial.print(tempC);
+    Serial.println(" °C");
+
+    lcd.setCursor(6, 0); // Move cursor after "Temp:"
+    lcd.print("      ");  // Clear previous value
+    lcd.setCursor(6, 0); // Move cursor again
+    lcd.print(tempC);    // Print new temperature
+    lcd.print(" C");     // Print degree symbol
+
+    if (tempC > 30) {  // If temperature exceeds 30°C
+        digitalWrite(buzzer, HIGH);  // Turn ON buzzer
+    } else {
+        digitalWrite(buzzer, LOW);   // Turn OFF buzzer
+    }
+
+    delay(2000); // Update every 2 seconds
+}
