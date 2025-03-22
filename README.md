@@ -26,7 +26,9 @@ Features
 ✔️ Simulated and tested in TinkerCAD to ensure reliability.
 ✔️ Simple and cost-effective implementation.
 
+
 Circuit Design
+![image](https://github.com/Bishal033/Smart-Temperature-Monitoring-System/blob/main/Smart%20Temp%20Monitor%20Design.png)
 
 The system consists of:
 
@@ -38,4 +40,29 @@ Buzzer to provide alerts.
 
 Arduino Uno for processing and handling input/output operations.
 
-![image](https://github.com/Bishal033/Smart-Temperature-Monitoring-System/blob/main/Smart%20Temp%20Monitor%20Design.png)
+How It Works
+
+The TMP36 sensor detects the temperature and sends analog data to the Arduino Uno.
+
+The Arduino processes the data and converts it into a readable format.
+
+The LCD display shows the real-time temperature.
+
+If the temperature crosses a set threshold, the buzzer sounds an alert.
+
+The system can be tested and modified using TinkerCAD before real-world implementation.
+
+Simulation
+
+The project has been simulated and tested using TinkerCAD to validate circuit design and functionality.
+
+Future Enhancements
+
+WiFi Connectivity: Send temperature data to a remote server.
+
+Mobile App Integration: View real-time data on a smartphone.
+
+Data Logging: Store historical temperature data for analysis.
+
+
+
