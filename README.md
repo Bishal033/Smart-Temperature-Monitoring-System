@@ -38,4 +38,4 @@ Buzzer to provide alerts.
 
 Arduino Uno for processing and handling input/output operations.
 
-![image](![image](https://github.com/user-attachments/assets/cbb2747f-9ce5-418d-996b-90e059fd629c))
+![image](https://github.com/Bishal033/Smart-Temperature-Monitoring-System/blob/main/Smart%20Temp%20Monitor%20Design.png)
